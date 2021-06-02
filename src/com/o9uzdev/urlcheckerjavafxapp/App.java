@@ -26,6 +26,13 @@ public class App extends Application {
         textField.setPrefWidth(400);
         Button button = new Button("Check");
 
+        // button EventHandler
+        button.setOnAction(event -> {
+            // URL verification
+            String regex = "^(https?|ftp|file)://[-a-zA-Z0-9+&@#/%?=~_|!:,.;]*[-a-zA-Z0-9+&@#/%=~_|]";
+            System.out.println(IsMatch(textField.getText(), regex));
+        });
+
         HBox hRoot = new HBox();
         hRoot.setPadding(new Insets(10, 10, 10, 10));
         hRoot.setSpacing(10);
